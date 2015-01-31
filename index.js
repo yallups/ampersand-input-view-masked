@@ -20,6 +20,14 @@ var MaskedInputView = InputView.extend({
     maskOptions: 'object'
   },
 
+  derived: {
+    $input: {
+      fn: function () {
+        return $(this.input);
+      }
+    }
+  },
+
   initialize: function () {
     InputView.prototype.initialize.apply(this, arguments);
     this.on('change:mask', this.applyMask);
@@ -30,7 +38,7 @@ var MaskedInputView = InputView.extend({
   },
   applyMask : function () {
     if (this.mask && this.input && !isAndroid) {
-      $(this.input).inputmask(
+      this.$input.inputmask(
         extend({ mask: this.mask }, maskDefaults, this.maskOptions)
       ).on('input keyup', this.handleInputChanged);
     }
@@ -38,7 +46,7 @@ var MaskedInputView = InputView.extend({
   setValue: function (value) {
     this.value = value;
 
-    $(this.input).val(value);
+    this.$input.val(value);
 
     if (!this.getErrorMessage(this.value)) {
       this.shouldValidate = true;
@@ -48,7 +56,7 @@ var MaskedInputView = InputView.extend({
     if (document.activeElement === this.input) {
       this.directlyEdited = true;
     }
-    this.value = this.clean($(this.input).val());
+    this.value = this.clean(this.$input.val());
   }
 });
 
