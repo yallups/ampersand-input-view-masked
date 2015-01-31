@@ -1,0 +1,30 @@
+{
+  "name": "ampersand-input-view-masked",
+  "version": "1.0.0",
+  "description": "extension on `ampersand-input-view-extension` with masking leveraged by `jquery.inputmask`",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yallups/ampersand-input-view-masked.git"
+  },
+  "keywords": [
+    "mask",
+    "input",
+    "ampersand"
+  ],
+  "author": "Shawn <mryallups@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yallups/ampersand-input-view-masked/issues"
+  },
+  "homepage": "https://github.com/yallups/ampersand-input-view-masked",
+  "dependencies": {
+    "extend": "^2.0.0",
+    "jquery": "^2.1.3",
+    "jquery.inputmask": "^3.1.59",
+    "ampersand-input-view-extension": "yallups/ampersand-input-view-extension"
+  }
+}
